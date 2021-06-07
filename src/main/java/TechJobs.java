@@ -62,7 +62,7 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                    printJobs(JobData.findByValue(searchTerm));
+                    printJobs(JobData.findByValue(searchField, searchTerm));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
@@ -122,6 +122,7 @@ public class TechJobs {
         // User types nothing
         if (someJobs.size() == 0) {
             System.out.println("No Results");
+            System.out.println("");
             //User types search term that is found in hashmap and results are printed
         } else {
             for (int i = 0; i < someJobs.size(); i++) {
