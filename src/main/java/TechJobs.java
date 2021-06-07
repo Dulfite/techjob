@@ -121,20 +121,19 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         // User types nothing
         if (someJobs.size() == 0) {
-            System.out.println("No Results");
-            System.out.println("");
+            System.out.print("No Results");
             //User types search term that is found in hashmap and results are printed
         } else {
             for (int i = 0; i < someJobs.size(); i++) {
-                System.out.println("");
-                System.out.println("*****");
+                System.out.print("");
+                System.out.print("*****");
                 for (Map.Entry<String, String> entry : someJobs.get(i).entrySet()) {
                     String key = entry.getKey();
                     Object value = entry.getValue();
 
                     System.out.println(key + ": " + value);
                 }
-                System.out.println("*****");
+                System.out.print("*****");
 //                System.out.println(" \n");
             }
         }
