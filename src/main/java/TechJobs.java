@@ -1,3 +1,5 @@
+
+//Attempt 1 below:
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -62,6 +64,7 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
+//                    System.out.println("");
                     printJobs(JobData.findByValue(searchField, searchTerm));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
@@ -121,20 +124,23 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         // User types nothing
         if (someJobs.size() == 0) {
-            System.out.print("No Results");
+            System.out.println("No Results");
             //User types search term that is found in hashmap and results are printed
         } else {
-            for (int i = 0; i < someJobs.size(); i++) {
-                System.out.print("");
-                System.out.print("*****");
-                for (Map.Entry<String, String> entry : someJobs.get(i).entrySet()) {
-                    String key = entry.getKey();
-                    Object value = entry.getValue();
-
-                    System.out.println(key + ": " + value);
+            for(HashMap<String, String> job : someJobs){
+                System.out.println("\n*****");
+                for(Map.Entry <String, String> categories : job.entrySet()) {
+                    System.out.println(categories.getKey() + ": " + categories.getValue());
                 }
-                System.out.print("*****");
-//                System.out.println(" \n");
+                System.out.println("*****");
+//            for (int i = 0; i < someJobs.size(); i++) {
+//                System.out.print("");
+//                System.out.println("*****");
+//                for (Map.Entry<String, String> entry : someJobs.get(i).entrySet()) {
+//                    String key = entry.getKey();
+//                    Object value = entry.getValue();
+//
+//                    System.out.println(key + ": " + value);
             }
         }
     }
