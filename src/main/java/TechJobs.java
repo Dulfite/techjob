@@ -10,7 +10,7 @@ import java.util.Scanner;
  */
 public class TechJobs {
 
-    private static Scanner in = new Scanner(System.in);
+    static Scanner in = new Scanner(System.in);
 
     public static void main (String[] args) {
 
@@ -124,7 +124,7 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         // User types nothing
         if (someJobs.size() == 0) {
-            System.out.println("No Results");
+            System.out.print("No Results");
             //User types search term that is found in hashmap and results are printed
         } else {
             for(HashMap<String, String> job : someJobs){
